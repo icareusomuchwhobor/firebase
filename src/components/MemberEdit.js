@@ -30,9 +30,14 @@ const MemberEdit = () => {
         setEmail(data.email_mem);
         setPassword(data.password_mem);
         setDocId(memberData.id);
+      } else {
+        alert("ไม่พบข้อมูลสมาชิก");
+        navigate("/");
       }
     } catch (error) {
       console.error("Error fetching member:", error);
+      alert("เกิดข้อผิดพลาดในการโหลดข้อมูล");
+      navigate("/");
     }
   };
 
@@ -52,6 +57,7 @@ const MemberEdit = () => {
         alert("อัปเดตข้อมูลสำเร็จ");
         navigate("/");
       } catch (error) {
+        console.error("Error updating member:", error);
         alert("เกิดข้อผิดพลาดในการอัปเดต");
       }
     }

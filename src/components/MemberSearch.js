@@ -24,8 +24,8 @@ const MemberSearch = () => {
     handleSearch();
   }, []);
 
-  const handleEdit = (id_mem) => {
-    navigate("/edit", { state: { id: id_mem } });
+  const handleEdit = (id) => {
+    navigate("/edit", { state: { id: id } });
   };
 
   const handleAdd = () => {
@@ -162,7 +162,7 @@ const MemberSearch = () => {
                   <td style={styles.td}>
                     <button 
                       style={styles.btnEdit} 
-                      onClick={() => handleEdit(member.id)}
+                      onClick={() => handleEdit(member.id_mem)}
                     >
                       แก้ไข
                     </button>
